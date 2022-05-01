@@ -19,6 +19,28 @@ export class ListaPlantasComponent implements OnInit {
     });
   }
 
+  getTotalInterior():number{
+    let suma = 0;
+
+    for (let i = 0; i < this.plantas.length; i++) {
+      if(this.plantas[i].tipo === "Interior"){
+        suma ++;
+      }
+    }
+    return suma;
+  }
+
+  getTotalExterior():number{
+    let suma = 0;
+
+    for (let i = 0; i < this.plantas.length; i++) {
+      if(this.plantas[i].tipo === "Exterior"){
+        suma ++;
+      }
+    }
+    return suma;
+  }
+
   ngOnInit() {
     this.getPlantas();
   }
